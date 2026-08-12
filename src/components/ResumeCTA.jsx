@@ -326,7 +326,7 @@ export const ResumeCTA = () => {
                   onClick={(e) => e.stopPropagation()}
                 >
                   {/* Header */}
-                  <div className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-border/50 flex-shrink-0">
+                  <div className="relative z-10 flex items-center justify-between px-4 md:px-6 py-3 border-b border-border/50 flex-shrink-0">
                     <div>
                       <h2
                         id="resume-modal-title"
@@ -340,7 +340,7 @@ export const ResumeCTA = () => {
                     </div>
 
                     {/* Controls */}
-                    <div className="flex items-center gap-1">
+                    <div className="relative z-20 flex items-center gap-1" style={{ touchAction: "manipulation" }}>
                       <button
                         onClick={() => setZoom((z) => Math.max(75, z - 25))}
                         aria-label="Zoom out"
@@ -406,7 +406,7 @@ export const ResumeCTA = () => {
                   </div>
 
                   {/* Resume iframe with zoom */}
-                  <div className="flex-1 overflow-auto rounded-b-2xl flex items-center justify-center">
+                  <div className="relative z-0 flex-1 overflow-auto rounded-b-2xl flex items-center justify-center">
                     {embedUrl ? (
                       <iframe
                         src={embedUrl}
