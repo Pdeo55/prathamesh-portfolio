@@ -1,11 +1,10 @@
-import { Linkedin, Mail, Github, Download } from "lucide-react";
+import { Linkedin, Mail, Github } from "lucide-react";
 import { Button } from "@/components/Button";
-import { AnimatedBorderButton } from "@/components/AnimatedBorderButton";
+import { ResumeCTA } from "@/components/ResumeCTA";
 
 const email = import.meta.env.VITE_EMAIL;
 const linkedinUrl = import.meta.env.VITE_LINKEDIN_URL;
 const githubUrl = import.meta.env.VITE_GITHUB_URL;
-const resumeUrl = import.meta.env.VITE_RESUME_URL;
 
 export const Contact = () => {
   return (
@@ -63,14 +62,7 @@ export const Contact = () => {
                   </a>
                 )}
               </div>
-              {resumeUrl && (
-                <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
-                  <AnimatedBorderButton>
-                    <Download className="w-5 h-5" />
-                    Download Resume
-                  </AnimatedBorderButton>
-                </a>
-              )}
+              <ResumeCTA />
             </div>
           </div>
 

@@ -1,8 +1,6 @@
 import { Button } from "@/components/Button";
-import { ArrowRight, ChevronDown, Download } from "lucide-react";
-import { AnimatedBorderButton } from "../components/AnimatedBorderButton";
-
-const resumeUrl = import.meta.env.VITE_RESUME_URL;
+import { ArrowRight, ChevronDown } from "lucide-react";
+import { ResumeCTA } from "@/components/ResumeCTA";
 
 const skills = [
   "C#",
@@ -82,17 +80,16 @@ export const Hero = () => {
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 animate-fade-in animation-delay-300">
-              <Button size="lg">
+              <Button
+                size="lg"
+                onClick={() => {
+                  const el = document.getElementById("projects");
+                  if (el) el.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
                 View Projects <ArrowRight className="w-5 h-5" />
               </Button>
-              {resumeUrl && (
-                <a href={resumeUrl} target="_blank" rel="noopener noreferrer">
-                  <AnimatedBorderButton>
-                    <Download className="w-5 h-5" />
-                    Download Resume
-                  </AnimatedBorderButton>
-                </a>
-              )}
+              <ResumeCTA />
             </div>
           </div>
           {/* Right Column - Profile Image */}
