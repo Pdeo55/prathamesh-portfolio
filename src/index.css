@@ -205,6 +205,25 @@
     animation: marquee 30s linear infinite;
   }
 
+  /* --- Projects carousel marquee ---
+     Duration is driven by the --marquee-duration custom property set inline
+     from Projects.jsx (MARQUEE_DURATION_SECONDS), so it stays easy to tune.
+     Pauses on hover so users can read a card. */
+  .marquee-track {
+    animation: marquee var(--marquee-duration, 60s) linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: none;
+    }
+  }
+
   .animation-delay-100 {
     animation-delay: 100ms;
   }
